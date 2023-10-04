@@ -34,6 +34,7 @@
             this.DropDownBox = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.PicBox = new System.Windows.Forms.PictureBox();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.PicBox)).BeginInit();
             this.SuspendLayout();
             // 
@@ -43,7 +44,7 @@
             this.InfoButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.InfoButton.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.InfoButton.ForeColor = System.Drawing.SystemColors.Control;
-            this.InfoButton.Location = new System.Drawing.Point(286, 547);
+            this.InfoButton.Location = new System.Drawing.Point(286, 542);
             this.InfoButton.Name = "InfoButton";
             this.InfoButton.Size = new System.Drawing.Size(28, 27);
             this.InfoButton.TabIndex = 0;
@@ -61,7 +62,6 @@
             // ExtractImagesButton
             // 
             this.ExtractImagesButton.FlatAppearance.BorderSize = 0;
-            this.ExtractImagesButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(99)))), ((int)(((byte)(101)))), ((int)(((byte)(103)))));
             this.ExtractImagesButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ExtractImagesButton.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ExtractImagesButton.ForeColor = System.Drawing.SystemColors.Control;
@@ -106,12 +106,26 @@
             this.PicBox.TabIndex = 5;
             this.PicBox.TabStop = false;
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label2.Font = new System.Drawing.Font("Calibri", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.SystemColors.Control;
+            this.label2.Location = new System.Drawing.Point(7, 8);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(318, 61);
+            this.label2.TabIndex = 6;
+            this.label2.Text = "Image Grabber";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(47)))), ((int)(((byte)(51)))));
             this.ClientSize = new System.Drawing.Size(330, 575);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.InfoButton);
             this.Controls.Add(this.PicBox);
             this.Controls.Add(this.label1);
@@ -138,6 +152,7 @@
         private System.Windows.Forms.ComboBox DropDownBox;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox PicBox;
+        private System.Windows.Forms.Label label2;
     }
 }
 
