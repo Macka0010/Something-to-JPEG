@@ -14,7 +14,7 @@ namespace PDF_2_JPEG
     public partial class Form1 : Form
     {
         private readonly BackgroundWorker bgWorker;
-        private List<Image> previewImages;
+        private readonly List<Image> previewImages;
         private int previewIndex;
 
         public Form1()

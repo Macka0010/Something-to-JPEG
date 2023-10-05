@@ -64,9 +64,6 @@ namespace PDF_2_JPEG
             this.InfoButton.TabIndex = 0;
             this.InfoButton.Text = "?";
             this.InfoButton.UseVisualStyleBackColor = true;
-            // Set the button's Region property to make it circular
-            this.InfoButton.Click += new System.EventHandler(this.InfoButton_Click);
-
             // 
             // ProgressBar
             // 
@@ -78,6 +75,7 @@ namespace PDF_2_JPEG
             // 
             // ExtractImagesButton
             // 
+            this.ExtractImagesButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(50)))), ((int)(((byte)(53)))));
             this.ExtractImagesButton.FlatAppearance.BorderSize = 0;
             this.ExtractImagesButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ExtractImagesButton.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -87,7 +85,7 @@ namespace PDF_2_JPEG
             this.ExtractImagesButton.Size = new System.Drawing.Size(129, 28);
             this.ExtractImagesButton.TabIndex = 2;
             this.ExtractImagesButton.Text = "Extract Images!";
-            this.ExtractImagesButton.UseVisualStyleBackColor = true;
+            this.ExtractImagesButton.UseVisualStyleBackColor = false;
             this.ExtractImagesButton.Click += new System.EventHandler(this.ExtractImagesButton_Click);
             // 
             // DropDownBox
