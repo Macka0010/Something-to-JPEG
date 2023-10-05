@@ -1,4 +1,6 @@
-﻿namespace PDF_2_JPEG
+﻿using System.Drawing;
+
+namespace PDF_2_JPEG
 {
     partial class Form1
     {
@@ -43,6 +45,9 @@
             this.imagePreviewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.OnToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.OffToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ExitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.NextPreviewButton = new System.Windows.Forms.Button();
+            this.PreviousPreviewButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.PicBox)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -59,7 +64,9 @@
             this.InfoButton.TabIndex = 0;
             this.InfoButton.Text = "?";
             this.InfoButton.UseVisualStyleBackColor = true;
+            // Set the button's Region property to make it circular
             this.InfoButton.Click += new System.EventHandler(this.InfoButton_Click);
+
             // 
             // ProgressBar
             // 
@@ -148,7 +155,8 @@
             // 
             this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.colorModeToolStripMenuItem,
-            this.imagePreviewToolStripMenuItem});
+            this.imagePreviewToolStripMenuItem,
+            this.ExitToolStripMenuItem});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
             this.fileToolStripMenuItem.Size = new System.Drawing.Size(40, 24);
             this.fileToolStripMenuItem.Text = "File";
@@ -159,8 +167,8 @@
             this.DarkModeToolStripMenuItem,
             this.LightModeToolStripMenuItem});
             this.colorModeToolStripMenuItem.Name = "colorModeToolStripMenuItem";
-            this.colorModeToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.colorModeToolStripMenuItem.Text = "Color Mode";
+            this.colorModeToolStripMenuItem.Size = new System.Drawing.Size(153, 22);
+            this.colorModeToolStripMenuItem.Text = "Dark Mode";
             // 
             // DarkModeToolStripMenuItem
             // 
@@ -184,7 +192,7 @@
             this.OnToolStripMenuItem,
             this.OffToolStripMenuItem});
             this.imagePreviewToolStripMenuItem.Name = "imagePreviewToolStripMenuItem";
-            this.imagePreviewToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.imagePreviewToolStripMenuItem.Size = new System.Drawing.Size(153, 22);
             this.imagePreviewToolStripMenuItem.Text = "Image Preview";
             // 
             // OnToolStripMenuItem
@@ -192,16 +200,51 @@
             this.OnToolStripMenuItem.Checked = true;
             this.OnToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
             this.OnToolStripMenuItem.Name = "OnToolStripMenuItem";
-            this.OnToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.OnToolStripMenuItem.Size = new System.Drawing.Size(89, 22);
             this.OnToolStripMenuItem.Text = "On";
             this.OnToolStripMenuItem.Click += new System.EventHandler(this.OnToolStripMenuItem_Click);
             // 
             // OffToolStripMenuItem
             // 
             this.OffToolStripMenuItem.Name = "OffToolStripMenuItem";
-            this.OffToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.OffToolStripMenuItem.Size = new System.Drawing.Size(89, 22);
             this.OffToolStripMenuItem.Text = "Off";
             this.OffToolStripMenuItem.Click += new System.EventHandler(this.OffToolStripMenuItem_Click);
+            // 
+            // ExitToolStripMenuItem
+            // 
+            this.ExitToolStripMenuItem.Name = "ExitToolStripMenuItem";
+            this.ExitToolStripMenuItem.Size = new System.Drawing.Size(153, 22);
+            this.ExitToolStripMenuItem.Text = "Exit";
+            this.ExitToolStripMenuItem.Click += new System.EventHandler(this.ExitToolStripMenuItem_Click);
+            // 
+            // NextPreviewButton
+            // 
+            this.NextPreviewButton.FlatAppearance.BorderSize = 0;
+            this.NextPreviewButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.NextPreviewButton.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.NextPreviewButton.ForeColor = System.Drawing.SystemColors.Control;
+            this.NextPreviewButton.Location = new System.Drawing.Point(286, 372);
+            this.NextPreviewButton.Name = "NextPreviewButton";
+            this.NextPreviewButton.Size = new System.Drawing.Size(28, 27);
+            this.NextPreviewButton.TabIndex = 8;
+            this.NextPreviewButton.Text = ">";
+            this.NextPreviewButton.UseVisualStyleBackColor = true;
+            this.NextPreviewButton.Click += new System.EventHandler(this.NextPreviewButton_Click);
+            // 
+            // PreviousPreviewButton
+            // 
+            this.PreviousPreviewButton.FlatAppearance.BorderSize = 0;
+            this.PreviousPreviewButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.PreviousPreviewButton.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PreviousPreviewButton.ForeColor = System.Drawing.SystemColors.Control;
+            this.PreviousPreviewButton.Location = new System.Drawing.Point(14, 372);
+            this.PreviousPreviewButton.Name = "PreviousPreviewButton";
+            this.PreviousPreviewButton.Size = new System.Drawing.Size(28, 27);
+            this.PreviousPreviewButton.TabIndex = 9;
+            this.PreviousPreviewButton.Text = "<";
+            this.PreviousPreviewButton.UseVisualStyleBackColor = true;
+            this.PreviousPreviewButton.Click += new System.EventHandler(this.PreviousPreviewButton_Click);
             // 
             // Form1
             // 
@@ -209,6 +252,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(47)))), ((int)(((byte)(51)))));
             this.ClientSize = new System.Drawing.Size(330, 575);
+            this.Controls.Add(this.PreviousPreviewButton);
+            this.Controls.Add(this.NextPreviewButton);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.InfoButton);
             this.Controls.Add(this.PicBox);
@@ -249,6 +294,9 @@
         private System.Windows.Forms.ToolStripMenuItem imagePreviewToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem OnToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem OffToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ExitToolStripMenuItem;
+        private System.Windows.Forms.Button NextPreviewButton;
+        private System.Windows.Forms.Button PreviousPreviewButton;
     }
 }
 
