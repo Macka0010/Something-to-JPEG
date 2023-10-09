@@ -48,6 +48,9 @@ namespace PDF_2_JPEG
             this.ExitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.NextPreviewButton = new System.Windows.Forms.Button();
             this.PreviousPreviewButton = new System.Windows.Forms.Button();
+            this.autoOpenPDFFolderToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.AutoOpenSwitchOn = new System.Windows.Forms.ToolStripMenuItem();
+            this.AutoOpenSwitchOff = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.PicBox)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -136,7 +139,7 @@ namespace PDF_2_JPEG
             // 
             // menuStrip1
             // 
-            this.menuStrip1.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.menuStrip1.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.menuStrip1.GripMargin = new System.Windows.Forms.Padding(0);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fileToolStripMenuItem});
@@ -144,19 +147,20 @@ namespace PDF_2_JPEG
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(0);
+            this.menuStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
             this.menuStrip1.Size = new System.Drawing.Size(330, 24);
             this.menuStrip1.Stretch = false;
             this.menuStrip1.TabIndex = 7;
-            this.menuStrip1.Text = "menuStrip1";
             // 
             // fileToolStripMenuItem
             // 
             this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.colorModeToolStripMenuItem,
             this.imagePreviewToolStripMenuItem,
+            this.autoOpenPDFFolderToolStripMenuItem,
             this.ExitToolStripMenuItem});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            this.fileToolStripMenuItem.Size = new System.Drawing.Size(40, 24);
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(39, 24);
             this.fileToolStripMenuItem.Text = "File";
             // 
             // colorModeToolStripMenuItem
@@ -165,7 +169,7 @@ namespace PDF_2_JPEG
             this.DarkModeToolStripMenuItem,
             this.LightModeToolStripMenuItem});
             this.colorModeToolStripMenuItem.Name = "colorModeToolStripMenuItem";
-            this.colorModeToolStripMenuItem.Size = new System.Drawing.Size(153, 22);
+            this.colorModeToolStripMenuItem.Size = new System.Drawing.Size(193, 22);
             this.colorModeToolStripMenuItem.Text = "Dark Mode";
             // 
             // DarkModeToolStripMenuItem
@@ -190,7 +194,7 @@ namespace PDF_2_JPEG
             this.OnToolStripMenuItem,
             this.OffToolStripMenuItem});
             this.imagePreviewToolStripMenuItem.Name = "imagePreviewToolStripMenuItem";
-            this.imagePreviewToolStripMenuItem.Size = new System.Drawing.Size(153, 22);
+            this.imagePreviewToolStripMenuItem.Size = new System.Drawing.Size(193, 22);
             this.imagePreviewToolStripMenuItem.Text = "Image Preview";
             // 
             // OnToolStripMenuItem
@@ -198,21 +202,21 @@ namespace PDF_2_JPEG
             this.OnToolStripMenuItem.Checked = true;
             this.OnToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
             this.OnToolStripMenuItem.Name = "OnToolStripMenuItem";
-            this.OnToolStripMenuItem.Size = new System.Drawing.Size(89, 22);
+            this.OnToolStripMenuItem.Size = new System.Drawing.Size(91, 22);
             this.OnToolStripMenuItem.Text = "On";
             this.OnToolStripMenuItem.Click += new System.EventHandler(this.OnToolStripMenuItem_Click);
             // 
             // OffToolStripMenuItem
             // 
             this.OffToolStripMenuItem.Name = "OffToolStripMenuItem";
-            this.OffToolStripMenuItem.Size = new System.Drawing.Size(89, 22);
+            this.OffToolStripMenuItem.Size = new System.Drawing.Size(91, 22);
             this.OffToolStripMenuItem.Text = "Off";
             this.OffToolStripMenuItem.Click += new System.EventHandler(this.OffToolStripMenuItem_Click);
             // 
             // ExitToolStripMenuItem
             // 
             this.ExitToolStripMenuItem.Name = "ExitToolStripMenuItem";
-            this.ExitToolStripMenuItem.Size = new System.Drawing.Size(153, 22);
+            this.ExitToolStripMenuItem.Size = new System.Drawing.Size(193, 22);
             this.ExitToolStripMenuItem.Text = "Exit";
             this.ExitToolStripMenuItem.Click += new System.EventHandler(this.ExitToolStripMenuItem_Click);
             // 
@@ -243,6 +247,31 @@ namespace PDF_2_JPEG
             this.PreviousPreviewButton.Text = "<";
             this.PreviousPreviewButton.UseVisualStyleBackColor = true;
             this.PreviousPreviewButton.Click += new System.EventHandler(this.PreviousPreviewButton_Click);
+            // 
+            // autoOpenPDFFolderToolStripMenuItem
+            // 
+            this.autoOpenPDFFolderToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.AutoOpenSwitchOn,
+            this.AutoOpenSwitchOff});
+            this.autoOpenPDFFolderToolStripMenuItem.Name = "autoOpenPDFFolderToolStripMenuItem";
+            this.autoOpenPDFFolderToolStripMenuItem.Size = new System.Drawing.Size(193, 22);
+            this.autoOpenPDFFolderToolStripMenuItem.Text = "Auto Open PDF Folder";
+            // 
+            // AutoOpenSwitchOn
+            // 
+            this.AutoOpenSwitchOn.Checked = true;
+            this.AutoOpenSwitchOn.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.AutoOpenSwitchOn.Name = "AutoOpenSwitchOn";
+            this.AutoOpenSwitchOn.Size = new System.Drawing.Size(180, 22);
+            this.AutoOpenSwitchOn.Text = "On";
+            this.AutoOpenSwitchOn.Click += new System.EventHandler(this.AutoOpenSwitchOn_Click);
+            // 
+            // AutoOpenSwitchOff
+            // 
+            this.AutoOpenSwitchOff.Name = "AutoOpenSwitchOff";
+            this.AutoOpenSwitchOff.Size = new System.Drawing.Size(180, 22);
+            this.AutoOpenSwitchOff.Text = "Off";
+            this.AutoOpenSwitchOff.Click += new System.EventHandler(this.AutoOpenSwitchOff_Click);
             // 
             // Form1
             // 
@@ -295,6 +324,9 @@ namespace PDF_2_JPEG
         private System.Windows.Forms.ToolStripMenuItem ExitToolStripMenuItem;
         private System.Windows.Forms.Button NextPreviewButton;
         private System.Windows.Forms.Button PreviousPreviewButton;
+        private System.Windows.Forms.ToolStripMenuItem autoOpenPDFFolderToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem AutoOpenSwitchOn;
+        private System.Windows.Forms.ToolStripMenuItem AutoOpenSwitchOff;
     }
 }
 
