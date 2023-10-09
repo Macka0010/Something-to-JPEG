@@ -35,8 +35,6 @@ namespace PDF_2_JPEG
             this.ExtractImagesButton = new System.Windows.Forms.Button();
             this.DropDownBox = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.PicBox = new System.Windows.Forms.PictureBox();
-            this.label2 = new System.Windows.Forms.Label();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.colorModeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -48,8 +46,10 @@ namespace PDF_2_JPEG
             this.ExitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.NextPreviewButton = new System.Windows.Forms.Button();
             this.PreviousPreviewButton = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.PicBox)).BeginInit();
+            this.label2 = new System.Windows.Forms.Label();
+            this.PicBox = new System.Windows.Forms.PictureBox();
             this.menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.PicBox)).BeginInit();
             this.SuspendLayout();
             // 
             // InfoButton
@@ -90,6 +90,7 @@ namespace PDF_2_JPEG
             // 
             // DropDownBox
             // 
+            this.DropDownBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.DropDownBox.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DropDownBox.FormattingEnabled = true;
             this.DropDownBox.Items.AddRange(new object[] {
@@ -101,6 +102,7 @@ namespace PDF_2_JPEG
             this.DropDownBox.Name = "DropDownBox";
             this.DropDownBox.Size = new System.Drawing.Size(121, 27);
             this.DropDownBox.TabIndex = 3;
+            this.DropDownBox.SelectedIndexChanged += new System.EventHandler(this.DropDownBox_SelectedIndexChanged);
             // 
             // label1
             // 
@@ -112,27 +114,6 @@ namespace PDF_2_JPEG
             this.label1.Size = new System.Drawing.Size(96, 19);
             this.label1.TabIndex = 4;
             this.label1.Text = "Select Option";
-            // 
-            // PicBox
-            // 
-            this.PicBox.Location = new System.Drawing.Point(14, 240);
-            this.PicBox.Name = "PicBox";
-            this.PicBox.Size = new System.Drawing.Size(300, 300);
-            this.PicBox.TabIndex = 5;
-            this.PicBox.TabStop = false;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label2.Font = new System.Drawing.Font("Calibri", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.SystemColors.Control;
-            this.label2.Location = new System.Drawing.Point(5, 29);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(318, 61);
-            this.label2.TabIndex = 6;
-            this.label2.Text = "Image Grabber";
             // 
             // menuStrip1
             // 
@@ -244,6 +225,28 @@ namespace PDF_2_JPEG
             this.PreviousPreviewButton.UseVisualStyleBackColor = true;
             this.PreviousPreviewButton.Click += new System.EventHandler(this.PreviousPreviewButton_Click);
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label2.Font = new System.Drawing.Font("Calibri", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.SystemColors.Control;
+            this.label2.Image = global::PDF_2_JPEG.Properties.Resources.lightmode;
+            this.label2.Location = new System.Drawing.Point(5, 29);
+            this.label2.MaximumSize = new System.Drawing.Size(300, 200);
+            this.label2.MinimumSize = new System.Drawing.Size(322, 65);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(322, 65);
+            this.label2.TabIndex = 6;
+            // 
+            // PicBox
+            // 
+            this.PicBox.Location = new System.Drawing.Point(14, 240);
+            this.PicBox.Name = "PicBox";
+            this.PicBox.Size = new System.Drawing.Size(300, 300);
+            this.PicBox.TabIndex = 5;
+            this.PicBox.TabStop = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -267,9 +270,9 @@ namespace PDF_2_JPEG
             this.MinimizeBox = false;
             this.Name = "Form1";
             this.Text = "PDF Image Extractor";
-            ((System.ComponentModel.ISupportInitialize)(this.PicBox)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.PicBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

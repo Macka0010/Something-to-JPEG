@@ -168,14 +168,35 @@ namespace PDF_2_JPEG
                 bgWorker.RunWorkerAsync(args);
             }
         }
-
         private void UpdateFormAppearanceBasedOnSettings()
         {
             bool isDarkModeOn = bool.Parse(Properties.Settings.Default.ColourMode);
             LightModeToolStripMenuItem.Checked = !isDarkModeOn;
             DarkModeToolStripMenuItem.Checked = isDarkModeOn;
+
+            // Update form background color
             this.BackColor = isDarkModeOn ? Color.FromArgb(44, 47, 51) : Color.White;
+
+            // Update button and label backgrounds and text colors
+            Color buttonAndLabelBackgroundColor = isDarkModeOn ? Color.FromArgb(44, 47, 51) : Color.White;
+            Color textForegroundColor = isDarkModeOn ? Color.White : Color.Black;
+
+            ExtractImagesButton.BackColor = buttonAndLabelBackgroundColor;
+            ExtractImagesButton.ForeColor = textForegroundColor;
+
+            NextPreviewButton.BackColor = buttonAndLabelBackgroundColor;
+            NextPreviewButton.ForeColor = textForegroundColor;
+
+            PreviousPreviewButton.BackColor = buttonAndLabelBackgroundColor;
+            PreviousPreviewButton.ForeColor = textForegroundColor;
+
+            InfoButton.BackColor = buttonAndLabelBackgroundColor;
+            InfoButton.ForeColor = textForegroundColor;
+
+            label1.BackColor = buttonAndLabelBackgroundColor;
+            label1.ForeColor = textForegroundColor;
         }
+
 
         private void ExtractAndSaveImages(string pdfPath, BackgroundWorker worker, string dropDownValue, int currentFile, int totalFiles)
         {
@@ -339,6 +360,11 @@ namespace PDF_2_JPEG
                 previewIndex--;
                 UpdatePreviewImage();
             }
+        }
+
+        private void DropDownBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            
         }
     }
 }
