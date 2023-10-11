@@ -23,6 +23,9 @@ namespace PDF_2_JPEG
             UpdatePicBoxBasedOnSettings();
             UpdateFormAppearanceBasedOnSettings();
             DropDownBox.SelectedIndex = 0;
+            menuStrip1.BackColor = Color.FromArgb(44, 47, 51);
+            menuStrip1.ForeColor = Color.White;
+
 
 
             GraphicsPath p = new GraphicsPath();
@@ -65,10 +68,11 @@ namespace PDF_2_JPEG
             bool isPreviewModeOn = bool.Parse(Properties.Settings.Default.PreviewMode);
             if (isPreviewModeOn && e.UserState is Image img)
             {
-                previewImages.Add(img);
-                UpdatePreviewImage();
+                PicBox.Image = img;
+                // Optionally, you can dispose of the previous image here to free memory.
             }
         }
+
 
         private void UpdatePreviewImage()
         {
@@ -145,6 +149,10 @@ namespace PDF_2_JPEG
 
         private void ExtractImagesButton_Click(object sender, EventArgs e)
         {
+            PicBox.Image = null;
+            previewImages.Clear();
+            previewIndex = 0;
+
             if (bgWorker.IsBusy)
             {
                 bgWorker.CancelAsync();
@@ -288,12 +296,21 @@ namespace PDF_2_JPEG
                     {
                         MessageBox.Show("No images were found in the PDF.");
                     }
+
+                    // Check if AutoOpenFolder is enabled
+                    bool autoOpenFolder = bool.Parse(Properties.Settings.Default.AutoOpenFolder);
+                    if (autoOpenFolder)
+                    {
+                        System.Diagnostics.Process.Start(folderPath);
+                    }
+
                 }
             }
             catch (Exception ex)
             {
                 MessageBox.Show($"An error occurred: {ex.Message}");
             }
+
         }
 
 
@@ -366,5 +383,22 @@ namespace PDF_2_JPEG
         {
             
         }
+
+        private void AutoOpenSwitchOn_Click(object sender, EventArgs e)
+        {
+            Properties.Settings.Default.AutoOpenFolder = "True";
+            Properties.Settings.Default.Save();
+            AutoOpenSwitchOn.Checked = true;
+            AutoOpenSwitchOff.Checked = false;
+        }
+
+        private void AutoOpenSwitchOff_Click(object sender, EventArgs e)
+        {
+            Properties.Settings.Default.AutoOpenFolder = "False";
+            Properties.Settings.Default.Save();
+            AutoOpenSwitchOn.Checked = false;
+            AutoOpenSwitchOff.Checked = true;
+        }
+
     }
 }

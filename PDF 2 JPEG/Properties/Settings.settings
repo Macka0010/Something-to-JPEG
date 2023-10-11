@@ -8,5 +8,8 @@
     <Setting Name="PreviewMode" Type="System.String" Scope="User">
       <Value Profile="(Default)">True</Value>
     </Setting>
+    <Setting Name="AutoOpenFolder" Type="System.String" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

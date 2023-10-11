@@ -46,5 +46,17 @@ namespace PDF_2_JPEG.Properties {
                 this["PreviewMode"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public string AutoOpenFolder {
+            get {
+                return ((string)(this["AutoOpenFolder"]));
+            }
+            set {
+                this["AutoOpenFolder"] = value;
+            }
+        }
     }
 }
