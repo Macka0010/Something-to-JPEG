@@ -43,17 +43,15 @@ namespace PDF_2_JPEG
             this.imagePreviewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.OnToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.OffToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.ExitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.NextPreviewButton = new System.Windows.Forms.Button();
-            this.PreviousPreviewButton = new System.Windows.Forms.Button();
-<<<<<<< HEAD
-            this.label2 = new System.Windows.Forms.Label();
-            this.PicBox = new System.Windows.Forms.PictureBox();
-=======
             this.autoOpenPDFFolderToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.AutoOpenSwitchOn = new System.Windows.Forms.ToolStripMenuItem();
             this.AutoOpenSwitchOff = new System.Windows.Forms.ToolStripMenuItem();
-            ((System.ComponentModel.ISupportInitialize)(this.PicBox)).BeginInit();
+            this.ExitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.TestingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.NextPreviewButton = new System.Windows.Forms.Button();
+            this.PreviousPreviewButton = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.PicBox = new System.Windows.Forms.PictureBox();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PicBox)).BeginInit();
             this.SuspendLayout();
@@ -126,7 +124,8 @@ namespace PDF_2_JPEG
             this.menuStrip1.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.menuStrip1.GripMargin = new System.Windows.Forms.Padding(0);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.fileToolStripMenuItem});
+            this.fileToolStripMenuItem,
+            this.TestingToolStripMenuItem});
             this.menuStrip1.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.HorizontalStackWithOverflow;
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
@@ -197,12 +196,44 @@ namespace PDF_2_JPEG
             this.OffToolStripMenuItem.Text = "Off";
             this.OffToolStripMenuItem.Click += new System.EventHandler(this.OffToolStripMenuItem_Click);
             // 
+            // autoOpenPDFFolderToolStripMenuItem
+            // 
+            this.autoOpenPDFFolderToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.AutoOpenSwitchOn,
+            this.AutoOpenSwitchOff});
+            this.autoOpenPDFFolderToolStripMenuItem.Name = "autoOpenPDFFolderToolStripMenuItem";
+            this.autoOpenPDFFolderToolStripMenuItem.Size = new System.Drawing.Size(193, 22);
+            this.autoOpenPDFFolderToolStripMenuItem.Text = "Auto Open PDF Folder";
+            // 
+            // AutoOpenSwitchOn
+            // 
+            this.AutoOpenSwitchOn.Checked = true;
+            this.AutoOpenSwitchOn.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.AutoOpenSwitchOn.Name = "AutoOpenSwitchOn";
+            this.AutoOpenSwitchOn.Size = new System.Drawing.Size(91, 22);
+            this.AutoOpenSwitchOn.Text = "On";
+            this.AutoOpenSwitchOn.Click += new System.EventHandler(this.AutoOpenSwitchOn_Click);
+            // 
+            // AutoOpenSwitchOff
+            // 
+            this.AutoOpenSwitchOff.Name = "AutoOpenSwitchOff";
+            this.AutoOpenSwitchOff.Size = new System.Drawing.Size(91, 22);
+            this.AutoOpenSwitchOff.Text = "Off";
+            this.AutoOpenSwitchOff.Click += new System.EventHandler(this.AutoOpenSwitchOff_Click);
+            // 
             // ExitToolStripMenuItem
             // 
             this.ExitToolStripMenuItem.Name = "ExitToolStripMenuItem";
             this.ExitToolStripMenuItem.Size = new System.Drawing.Size(193, 22);
             this.ExitToolStripMenuItem.Text = "Exit";
             this.ExitToolStripMenuItem.Click += new System.EventHandler(this.ExitToolStripMenuItem_Click);
+            // 
+            // TestingToolStripMenuItem
+            // 
+            this.TestingToolStripMenuItem.Name = "TestingToolStripMenuItem";
+            this.TestingToolStripMenuItem.Size = new System.Drawing.Size(56, 24);
+            this.TestingToolStripMenuItem.Text = "Testing";
+            this.TestingToolStripMenuItem.Click += new System.EventHandler(this.TestingToolStripMenuItem_Click);
             // 
             // NextPreviewButton
             // 
@@ -238,7 +269,7 @@ namespace PDF_2_JPEG
             this.label2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label2.Font = new System.Drawing.Font("Calibri", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.Control;
-            this.label2.Image = global::PDF_2_JPEG.Properties.Resources.lightmode;
+            this.label2.Image = global::PDF_2_JPEG.Properties.Resources.Screenshot_2023_10_08_0302242;
             this.label2.Location = new System.Drawing.Point(5, 29);
             this.label2.MaximumSize = new System.Drawing.Size(300, 200);
             this.label2.MinimumSize = new System.Drawing.Size(322, 65);
@@ -308,6 +339,7 @@ namespace PDF_2_JPEG
         private System.Windows.Forms.ToolStripMenuItem autoOpenPDFFolderToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem AutoOpenSwitchOn;
         private System.Windows.Forms.ToolStripMenuItem AutoOpenSwitchOff;
+        private System.Windows.Forms.ToolStripMenuItem TestingToolStripMenuItem;
     }
 }
 

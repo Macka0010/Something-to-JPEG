@@ -9,6 +9,7 @@ using System.Drawing;
 using System.Drawing.Imaging;
 using System.Drawing.Drawing2D;
 
+
 namespace PDF_2_JPEG
 {
     public partial class Form1 : Form
@@ -188,6 +189,10 @@ namespace PDF_2_JPEG
             // Update button and label backgrounds and text colors
             Color buttonAndLabelBackgroundColor = isDarkModeOn ? Color.FromArgb(44, 47, 51) : Color.White;
             Color textForegroundColor = isDarkModeOn ? Color.White : Color.Black;
+            Color menuBackgroundColor = isDarkModeOn ? Color.FromArgb(44, 47, 51) : Color.White;
+
+            menuStrip1.BackColor = menuBackgroundColor;
+            menuStrip1.ForeColor = textForegroundColor;
 
             ExtractImagesButton.BackColor = buttonAndLabelBackgroundColor;
             ExtractImagesButton.ForeColor = textForegroundColor;
@@ -400,5 +405,10 @@ namespace PDF_2_JPEG
             AutoOpenSwitchOff.Checked = true;
         }
 
+        private void TestingToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            EmailGrabber emailGrabber = new EmailGrabber();
+            emailGrabber.Show();
+        }
     }
 }
