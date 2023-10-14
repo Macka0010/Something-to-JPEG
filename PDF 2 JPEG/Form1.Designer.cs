@@ -280,6 +280,7 @@ namespace PDF_2_JPEG
             this.label2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label2.Font = new System.Drawing.Font("Calibri", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.Control;
+            this.label2.Image = global::PDF_2_JPEG.Properties.Resources.TitleBar1;
             this.label2.Location = new System.Drawing.Point(5, 29);
             this.label2.MaximumSize = new System.Drawing.Size(300, 200);
             this.label2.MinimumSize = new System.Drawing.Size(322, 65);
