@@ -56,13 +56,13 @@
             this.StatusBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.StatusBox.Cursor = System.Windows.Forms.Cursors.Default;
             this.StatusBox.Enabled = false;
-            this.StatusBox.Font = new System.Drawing.Font("Calibri", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.StatusBox.Font = new System.Drawing.Font("Arial Rounded MT Bold", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.StatusBox.HideSelection = false;
             this.StatusBox.Location = new System.Drawing.Point(9, 9);
             this.StatusBox.Margin = new System.Windows.Forms.Padding(0);
             this.StatusBox.Name = "StatusBox";
             this.StatusBox.ReadOnly = true;
-            this.StatusBox.Size = new System.Drawing.Size(200, 33);
+            this.StatusBox.Size = new System.Drawing.Size(200, 32);
             this.StatusBox.TabIndex = 11;
             this.StatusBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
