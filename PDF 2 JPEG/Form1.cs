@@ -405,7 +405,7 @@ namespace PDF_2_JPEG
             AutoOpenSwitchOff.Checked = true;
         }
 
-        private void TestingToolStripMenuItem_Click(object sender, EventArgs e)
+        private void MSGReplacerToolStripMenuItem_Click(object sender, EventArgs e)
         {
             EmailGrabber emailGrabber = new EmailGrabber();
             emailGrabber.Show();

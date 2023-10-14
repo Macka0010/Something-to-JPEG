@@ -30,6 +30,7 @@ namespace PDF_2_JPEG
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.InfoButton = new System.Windows.Forms.Button();
             this.ProgressBar = new System.Windows.Forms.ProgressBar();
             this.ExtractImagesButton = new System.Windows.Forms.Button();
@@ -47,7 +48,8 @@ namespace PDF_2_JPEG
             this.AutoOpenSwitchOn = new System.Windows.Forms.ToolStripMenuItem();
             this.AutoOpenSwitchOff = new System.Windows.Forms.ToolStripMenuItem();
             this.ExitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.TestingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.MSGReplacerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.NextPreviewButton = new System.Windows.Forms.Button();
             this.PreviousPreviewButton = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
@@ -125,7 +127,7 @@ namespace PDF_2_JPEG
             this.menuStrip1.GripMargin = new System.Windows.Forms.Padding(0);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fileToolStripMenuItem,
-            this.TestingToolStripMenuItem});
+            this.toolsToolStripMenuItem});
             this.menuStrip1.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.HorizontalStackWithOverflow;
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
@@ -143,8 +145,8 @@ namespace PDF_2_JPEG
             this.autoOpenPDFFolderToolStripMenuItem,
             this.ExitToolStripMenuItem});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            this.fileToolStripMenuItem.Size = new System.Drawing.Size(39, 24);
-            this.fileToolStripMenuItem.Text = "File";
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(61, 24);
+            this.fileToolStripMenuItem.Text = "Settings";
             // 
             // colorModeToolStripMenuItem
             // 
@@ -228,12 +230,21 @@ namespace PDF_2_JPEG
             this.ExitToolStripMenuItem.Text = "Exit";
             this.ExitToolStripMenuItem.Click += new System.EventHandler(this.ExitToolStripMenuItem_Click);
             // 
-            // TestingToolStripMenuItem
+            // toolsToolStripMenuItem
             // 
-            this.TestingToolStripMenuItem.Name = "TestingToolStripMenuItem";
-            this.TestingToolStripMenuItem.Size = new System.Drawing.Size(56, 24);
-            this.TestingToolStripMenuItem.Text = "Testing";
-            this.TestingToolStripMenuItem.Click += new System.EventHandler(this.TestingToolStripMenuItem_Click);
+            this.toolsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.MSGReplacerToolStripMenuItem});
+            this.toolsToolStripMenuItem.Name = "toolsToolStripMenuItem";
+            this.toolsToolStripMenuItem.Size = new System.Drawing.Size(48, 24);
+            this.toolsToolStripMenuItem.Text = "Tools";
+            // 
+            // MSGReplacerToolStripMenuItem
+            // 
+            this.MSGReplacerToolStripMenuItem.Name = "MSGReplacerToolStripMenuItem";
+            this.MSGReplacerToolStripMenuItem.Size = new System.Drawing.Size(150, 22);
+            this.MSGReplacerToolStripMenuItem.Text = "MSG Replacer";
+            this.MSGReplacerToolStripMenuItem.TextAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.MSGReplacerToolStripMenuItem.Click += new System.EventHandler(this.MSGReplacerToolStripMenuItem_Click);
             // 
             // NextPreviewButton
             // 
@@ -269,7 +280,6 @@ namespace PDF_2_JPEG
             this.label2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label2.Font = new System.Drawing.Font("Calibri", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.Control;
-            this.label2.Image = global::PDF_2_JPEG.Properties.Resources.Screenshot_2023_10_08_0302242;
             this.label2.Location = new System.Drawing.Point(5, 29);
             this.label2.MaximumSize = new System.Drawing.Size(300, 200);
             this.label2.MinimumSize = new System.Drawing.Size(322, 65);
@@ -303,6 +313,7 @@ namespace PDF_2_JPEG
             this.Controls.Add(this.menuStrip1);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
@@ -339,7 +350,8 @@ namespace PDF_2_JPEG
         private System.Windows.Forms.ToolStripMenuItem autoOpenPDFFolderToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem AutoOpenSwitchOn;
         private System.Windows.Forms.ToolStripMenuItem AutoOpenSwitchOff;
-        private System.Windows.Forms.ToolStripMenuItem TestingToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem toolsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem MSGReplacerToolStripMenuItem;
     }
 }
 

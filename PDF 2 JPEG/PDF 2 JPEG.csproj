@@ -145,16 +145,10 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\lightmode.png" />
+    <None Include="Resources\TitleBar.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Screenshot 2023-10-08 030224.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Screenshot 2023-10-08 0302241.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Screenshot 2023-10-08 0302242.png" />
+    <None Include="Resources\TitleBar1.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
